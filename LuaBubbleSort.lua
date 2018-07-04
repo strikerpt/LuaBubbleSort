@@ -1,3 +1,5 @@
+-- source http://www.w3big.com/fr/lua/lua-file-io.html
+
 
 zmatrice={}
 i=1
@@ -22,6 +24,20 @@ repeat
 
 for i=1, #zmatrice do
 	print(zmatrice[i])
+
 end
 
+
+
+file = io.open("SaveFile.txt", "w")
+io.output(file)
+
+for i=1, #zmatrice do
+
+	
+	io.write(zmatrice[i])
+	io.write('\n')
+
+end
+io.close(file)
 
