@@ -1,12 +1,25 @@
--- source http://www.w3big.com/fr/lua/lua-file-io.html
+#!/usr/bin/lua5.3
+-- Bubble sort en Lua
+-- hv 180704.1517
+-- source http://www.w3big.com/fr/lua/lua-file-io.html, https://wxlua.developpez.com/tutoriels/lua/general/cours-complet/#L4-d
 
 
 zmatrice={}
+
+hfilei = io.open("chiffres_input.txt", "r")
+io.input(hfilei)
+
 i=1
-for line in io.lines("ListeDeChiffres.txt") do
-	zmatrice[i]=line
+hline=io.read()
+repeat
+--	print(hline..", "..i)
+	zmatrice[i]=hline
 	i=i+1
-end
+	hline=io.read()
+until hline== nil
+io.close(hfilei) 
+
+
 
 
 repeat 
@@ -19,7 +32,7 @@ repeat
 			y=1
 		end
 	end
-	until y~=1 
+until y~=1 
 
 
 for i=1, #zmatrice do
@@ -28,16 +41,12 @@ for i=1, #zmatrice do
 end
 
 
-
-file = io.open("SaveFile.txt", "w")
-io.output(file)
+hfileo2 = io.open("chiffres_output.txt", "w")
+io.output(hfileo2)
 
 for i=1, #zmatrice do
-
-	
 	io.write(zmatrice[i])
 	io.write('\n')
-
 end
-io.close(file)
+io.close(hfileo2)
 

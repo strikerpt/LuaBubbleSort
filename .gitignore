@@ -1,3 +1,7 @@
+chiffres_output.txt
+
+*.lua.swp
+
 # Compiled Lua sources
 luac.out
 
