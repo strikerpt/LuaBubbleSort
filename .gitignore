@@ -1,3 +1,5 @@
+*.save
+
 chiffres_output.txt
 
 *.lua.swp
